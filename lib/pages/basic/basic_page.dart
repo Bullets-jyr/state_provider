@@ -8,23 +8,25 @@ class BasicPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen<int>(
-      counterProvider,
-      (previous, next) {
-        if (next == 3) {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                content: Text('counter: $next'),
-              );
-            },
-          );
-        }
-      },
-    );
+    // ref.listen<int>(
+    //   counterProvider,
+    //   (previous, next) {
+    //     if (next == 3) {
+    //       showDialog(
+    //         context: context,
+    //         builder: (context) {
+    //           return AlertDialog(
+    //             content: Text('counter: $next'),
+    //           );
+    //         },
+    //       );
+    //     }
+    //   },
+    // );
 
-    final value = ref.watch(counterProvider);
+    final value = ref.watch(ageProvider);
+
+    // final value = ref.watch(counterProvider);
 
     // if (value == 3) {
     //   showDialog(
@@ -43,13 +45,14 @@ class BasicPage extends ConsumerWidget {
       ),
       body: Center(
         child: Text(
-          '$value',
+          value,
           style: Theme.of(context).textTheme.headlineLarge,
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           ref.read(counterProvider.notifier).state++;
+          // ref.read(counterProvider.notifier).state = ref.read(counterProvider.notifier).state + 0;
         },
         child: const Icon(Icons.add),
       ),
