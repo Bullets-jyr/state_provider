@@ -22,6 +22,7 @@ class AutoDisposePage extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          // state를 이전 value에 기반해서 update를 해야하는 경우 (2가지 방법)
           // ref.read(autoDisposeCounterProvider.notifier).state = ref.read(autoDisposeCounterProvider.notifier).state + 10;
           ref.read(autoDisposeCounterProvider.notifier).update((state) => state + 10);
         },

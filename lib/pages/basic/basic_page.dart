@@ -8,7 +8,9 @@ class BasicPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // ref.listen<state의 타입>
     // ref.listen<int>(
+    //   listen하고 싶은 Provider
     //   counterProvider,
     //   (previous, next) {
     //     if (next == 3) {
