@@ -10,7 +10,7 @@ class BasicPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // ref.listen<state의 타입>
     // ref.listen<int>(
-    //   listen하고 싶은 Provider
+    //   listen할 Provider
     //   counterProvider,
     //   (previous, next) {
     //     if (next == 3) {
@@ -53,7 +53,7 @@ class BasicPage extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          ref.read(counterProvider.notifier).state++;
+          final val = ref.read(counterProvider.notifier).state++;
           // ref.read(counterProvider.notifier).state = ref.read(counterProvider.notifier).state + 0;
         },
         child: const Icon(Icons.add),
